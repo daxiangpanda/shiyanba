@@ -2,14 +2,14 @@
 # encoding: utf-8
 import urllib2
 from bs4 import BeautifulSoup
-# def url_open(url):
-#     # url = urllib.quote(url)
-#     req = urllib2.Request(url)
-#     response = urllib2.urlopen(req)
-#     html = response.read()
-#     soup = BeautifulSoup(html, 'html.parser')
-#     return soup
-#
+def url_open(url):
+    # url = urllib.quote(url)
+    req = urllib2.Request(url)
+    response = urllib2.urlopen(req)
+    html = response.read()
+    soup = BeautifulSoup(html, 'html.parser')
+    return soup
+
 
 #
 # url = 'http://ctf8.shiyanbar.com/jia/'
@@ -23,6 +23,7 @@ def process(soup):
     a = soup.find("<div name='my_expr'>")+20
     # print a
     b = soup.find('</div>',a)
+
     # print b
     # eval 是什么鬼？
     #

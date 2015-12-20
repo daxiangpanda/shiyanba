@@ -1,8 +1,8 @@
 # encoding: utf-8
 
-import Image
-import ImageEnhance
-import ImageFilter
+# import Image
+# import ImageEnhance
+# import ImageFilter
 import sys
 from pytesser import *
 
@@ -41,22 +41,22 @@ for i in range(256):
 #     return text
 # getverify1(r'E:\BaiduYunDownload\bmp.tar\bmp\1.bmp')
 
-im = Image.open(r'C:\Users\31351\PycharmProjects\shiyanba\30.tif')
+im = Image.open(r'E:\1.tif')
 imgry = im.convert('L')
 out = imgry.point(table,'1')
-textcode = image_to_string(out)
+textcode = image_to_string(im)
 print textcode
 
-# def logo_watermark(img):
-#     '''
-#     添加一个图片水印,原理就是合并图层，用png比较好
-#     '''
-#     baseim = Image.new ("RGBA", (60, 30), (255, 255, 255))
-#     logoim = Image.open(img)
-#     bw, bh = baseim.size
-#     lw, lh = logoim.size
-#     baseim.paste(logoim, (10,10))
-#     baseim.save(r'E:\\BaiduYunDownload\\bmp.tar\\bmp\\'+'a.jpg','JPEG')
-#     print u'logo水印组合成功'
-# img = r'E:\BaiduYunDownload\bmp.tar\bmp\1.bmp'
-# logo_watermark(img)
+def logo_watermark(img):
+    '''
+    添加一个图片水印,原理就是合并图层，用png比较好
+    '''
+    baseim = Image.new ("RGBA", (60, 30), (255, 255, 255))
+    logoim = Image.open(img)
+    bw, bh = baseim.size
+    lw, lh = logoim.size
+    baseim.paste(logoim, (10,10))
+    baseim.save(r'E:\\BaiduYunDownload\\bmp.tar\\bmp\\'+'a.jpg','JPEG')
+    print u'logo水印组合成功'
+img = r'E:\BaiduYunDownload\bmp.tar\bmp\1.bmp'
+logo_watermark(img)
