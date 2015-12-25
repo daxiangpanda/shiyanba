@@ -76,3 +76,30 @@ for i in range(1,17):
     im.crop(box2).save('E:\\shiyanba\\1225\\canyousee\\bmptest\\'+str(i)+'02'+".bmp")
     im.crop(box3).save('E:\\shiyanba\\1225\\canyousee\\bmptest\\'+str(i)+'03'+".bmp")
     im.crop(box4).save('E:\\shiyanba\\1225\\canyousee\\bmptest\\'+str(i)+'04'+".bmp")
+
+def printrgb(im):
+    width = im.size[0]
+    height = im.size[1]
+    for x in range(width):
+        for y in range(height):
+            r,g,b = pix[x,y]
+            print r,g,b
+
+二值化：
+
+
+import numpy as np
+from PIL import Image
+import skimage.io
+
+img = Image.open(file_name)
+img = img.convert("L")
+
+imgs = skimage.io.imread(file_name)
+ttt = np.mean(imgs)
+
+WHITE, BLACK = 255, 0
+
+img = img.point(lambda x: WHITE if x > ttt else BLACK)
+img = img.convert('1')
+img.save(new_file_name)
