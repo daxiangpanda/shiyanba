@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 __author__ = '31351'
+
 import itertools
 output = []
 for i in list(itertools.permutations([1,2,3,4,5,6,7,8,9,10],10)):
@@ -33,7 +35,7 @@ for i in list(itertools.permutations([1,2,3,4,5,6,7,8,9,10],10)):
             output.append(int(result))
 print max(output)
 # http://ctf1.shiyanbar.com/program/2/
-# ´ð°¸ÊÇ5728249411013637
+# ç­”æ¡ˆæ˜¯5728249411013637
 # print n1,n2,n3,n4,n5
 
         # print a,b,c,d,e,f,g,h,i,j
